@@ -16,9 +16,9 @@ class ToDoTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding:
-          const EdgeInsets.only(left: 25.0, right: 25.0, top: 25.0, bottom: 0),
+          const EdgeInsets.only(left: 25.0, right: 25.0, top: 20.0, bottom: 0),
       child: Container(
-        padding: EdgeInsets.all(24.0),
+        padding: EdgeInsets.all(10.0),
         decoration: BoxDecoration(
           color: Colors.cyan[50],
           borderRadius: BorderRadius.circular(12.0),
@@ -36,7 +36,14 @@ class ToDoTile extends StatelessWidget {
             // task names
             Text(
               taskName,
-              style: TextStyle(fontSize: 25, color: Colors.black),
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.black,
+                decoration: taskStatus
+                    ? TextDecoration.lineThrough
+                    : TextDecoration.none,
+                fontWeight: taskStatus ? FontWeight.normal : FontWeight.w500,
+              ),
             ),
           ],
         ),
